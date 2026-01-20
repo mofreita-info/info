@@ -32,6 +32,6 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: public_html/m.pimo.pro/
+          server-dir: public_html/m/
           protocol: ftp
           port: 21
