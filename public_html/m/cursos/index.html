@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cursos e Vídeos</title>
+    <meta name="description" content="Cursos e Vídeos — PIMO" />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: rgba(255, 255, 255, 0.06);
+        --card-2: rgba(255, 255, 255, 0.08);
+        --text: #eaf0ff;
+        --muted: rgba(234, 240, 255, 0.72);
+        --border: rgba(255, 255, 255, 0.10);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        color: var(--text);
+        background:
+          radial-gradient(900px 500px at 10% 0%, rgba(97, 99, 255, 0.22), transparent 55%),
+          radial-gradient(900px 500px at 90% 15%, rgba(25, 189, 255, 0.18), transparent 55%),
+          linear-gradient(180deg, #060a14 0%, var(--bg) 100%);
+      }
+
+      a { color: inherit; }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px 16px 56px;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(26px, 4vw, 40px);
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .card {
+        grid-column: span 12;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+
+      .card .card-head {
+        padding: 16px 16px 10px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .card h3, .card h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .badge {
+        font-size: 12px;
+        color: var(--muted);
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--card-2);
+        white-space: nowrap;
+      }
+
+      .card .card-body {
+        padding: 0 16px 16px;
+      }
+
+      .video-wrap {
+        padding: 0 16px 16px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+        border: none;
+        background: rgba(0,0,0,0.2);
+      }
+
+      .placeholder {
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px dashed rgba(255, 255, 255, 0.22);
+        color: var(--muted);
+        line-height: 1.6;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      @media (min-width: 900px) {
+        .video-col { grid-column: span 6; }
+        #cursos-card { grid-column: span 12; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Cursos e Vídeos</h1>
+        <p class="subtitle">Conteúdos em vídeo e uma área reservada para a futura lista de cursos.</p>
+      </header>
+
+      <section id="videos" aria-label="Vídeos" class="grid">
+        <article class="card video-col" data-yt-id="V295w9UMWG4">
+          <div class="card-head">
+            <h3>Introdução ao Projeto PIMO</h3>
+            <span class="badge">Vídeo 1</span>
+          </div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/V295w9UMWG4"
+              allowfullscreen
+              style="width:100%; height:400px; border-radius:12px; border:none;"
+              title="Introdução ao Projeto PIMO"
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="card video-col" data-yt-id="6K5F9WyTT4k">
+          <div class="card-head">
+            <h3>Apresentação da Plataforma</h3>
+            <span class="badge">Vídeo 2</span>
+          </div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/6K5F9WyTT4k"
+              allowfullscreen
+              style="width:100%; height:400px; border-radius:12px; border:none;"
+              title="Apresentação da Plataforma"
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="card video-col" data-yt-id="txOZyuSxOeE">
+          <div class="card-head">
+            <h3>Guia Inicial para Novos Utilizadores</h3>
+            <span class="badge">Vídeo 3</span>
+          </div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/txOZyuSxOeE"
+              allowfullscreen
+              style="width:100%; height:400px; border-radius:12px; border:none;"
+              title="Guia Inicial para Novos Utilizadores"
+            ></iframe>
+          </div>
+        </article>
+      </section>
+
+      <section id="cursos" aria-label="Lista de Cursos" class="grid">
+        <article class="card" id="cursos-card">
+          <div class="card-head">
+            <h2>Lista de Cursos</h2>
+            <span class="badge" id="status">Em breve</span>
+          </div>
+          <div class="card-body">
+            <div class="placeholder">
+              Esta área está reservada para a futura lista de cursos.<br />
+              Assim que houver cursos disponíveis, eles aparecerão aqui.
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <script>
+      // Pequeno JS (não depende de build): atualiza o badge com o ano atual.
+      (function () {
+        var status = document.getElementById("status");
+        if (status) status.textContent = "Em breve • " + new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>

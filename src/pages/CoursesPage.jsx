@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useVideos } from '../hooks/useVideos'
 
 // Components
 import { CourseCard } from '../components/CourseCard.jsx';
@@ -19,6 +20,7 @@ import { Search, Filter } from 'lucide-react';
 
 export function CoursesPage() {
   const { courses, loading } = useCourses();
+  const { videos } = useVideos();
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -107,7 +109,43 @@ export function CoursesPage() {
             ))}
           </div>
         </div>
+        
+{/* Videos Section */}
+{videos.length > 0 && (
+  <div className="mb-16">
+    <h2 className="text-3xl font-bold mb-6 text-center">Vídeos</h2>
 
+    <div className="grid md:grid-cols-2 gap-8">
+      {videos.map(video => (
+        <div key={video.id}>
+          <h3 className="text-xl font-semibold mb-2">{video.title}</h3>
+
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.youtube_id}`}
+              title={video.title}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                borderRadius: '12px',
+                border: 'none'
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          {video.description && (
+            <p className="mt-2 text-muted-foreground">{video.description}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
         {/* Courses Grid */}
         {loading ? (
           <div className="flex justify-center items-center py-20">
