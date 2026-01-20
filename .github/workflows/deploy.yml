@@ -35,14 +35,6 @@ jobs:
           server-dir: public_html/m/
           protocol: ftp
           port: 21
-
-      - name: Deploy static cursos page (no build)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./public_html/m/cursos/
-          server-dir: public_html/m/cursos/
-          protocol: ftp
-          port: 21
+          dangerous-clean-slate: true
+          exclude: |
+            cursos/**
