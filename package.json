@@ -30,7 +30,8 @@
     "react-i18next": "^16.5.3",
     "react-router-dom": "^6.16.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@types/node": "^20.8.3",
